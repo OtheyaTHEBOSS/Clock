@@ -4,7 +4,9 @@ from time import strftime
 from PIL import ImageTk,Image
 
 w=Tk()
-w.geometry('480x320')
+w.attributes('-fullscreen', True)
+w.config(cursor="none")
+#w.geometry('480x320')
 w.minsize(375,100)
 w.title("Digital Clock")
 
@@ -56,6 +58,7 @@ l2.place(x=10,y=10)
     l3=Label(f1, font=('Century Gothic',8),bg='#0e1013',fg='#7f7f7f',text='SECONDS')
     l3.place(x=450,y=130)
 
-labels()
-'''
+labels()'''
+
+
 w.mainloop()
