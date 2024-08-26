@@ -1,25 +1,34 @@
 import tkinter as tk
-import vlc
 
-root = tk.Tk()
+from tkinter import Tk, Label, Button
+from PIL import Image, ImageTk
+import cv2
 
-# VLC Setup
-instance = vlc.Instance("--no-video")
-player = instance.media_player_new()
-media = instance.media_new('1.mp4')  # Replace 'video.mp4' with your file path
-player.set_media(media)
+def play_video():
+    cap = cv2.VideoCapture("1.mp4")
+    if not cap.isOpened():
+        print("Error opening video stream or file")
+    while(cap.isOpened()):
+        ret, frame = cap.read()
+        if not ret:
+            print("Can't receive frame (stream end?). Exiting ...")
+            break
+        img = Image.fromarray(frame)
+        photo = ImageTk.PhotoImage(image=img)
+        label.config(image=photo)
+        label.image = photo
+        root.update()
+    cap.release()
+    cv2.destroyAllWindows()
 
-# Frame and Video Widget
-frame = tk.Frame(root)
-frame.pack(fill=tk.BOTH, expand=True)
+root = Tk()
+root.title("Video Player")
 
-video_widget = tk.Label(frame)
-video_widget.pack(fill=tk.BOTH, expand=True)
+label = Label(root)
+label.pack()
 
-# Connect VLC to Tkinter Widget
-player.set_hwnd(video_widget.winfo_id())
-
-# Start Playing
-player.play()
+play_button = Button(root, text="Play", command=play_video)
+play_button.pack()
 
 root.mainloop()
+
