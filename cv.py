@@ -1,13 +1,17 @@
 import cv2
 
-vid = cv2.VideoCapture("1.mp4")
+cap = cv2.VideoCapture('1.mp4')
 
-while(vid.isOpened()):
-    ret, frame = vid.read()
-    frame = cv2.resize(frame, (1280, 720))
-    cv2.imshow("video", frame)
-    if cv2.waitKey(60) & 0xFF == ord('q'):
+while cap.isOpened():
+    ret, frame = cap.read()
+    if ret:
+        cv2.imshow('Video', frame)
+
+        # OpenCV will handle audio playback automatically
+        if cv2.waitKey(60) & 0xFF == ord('q'):
+            break
+    else:
         break
 
-vid.release()
+cap.release()
 cv2.destroyAllWindows()
