@@ -87,7 +87,18 @@ numpy = [
     {version = ">=1.17.3", markers = "python_version >= \"3.8\""},
 ]
 
+[[package]]
+name = "python-vlc"
+version = "3.0.20123"
+description = "VLC bindings for python."
+optional = false
+python-versions = "*"
+files = [
+    {file = "python-vlc-3.0.20123.tar.gz", hash = "sha256:244fbb9e392a0326841fca926d6d12a2a36c546982191f493f148fa19e66b1d4"},
+    {file = "python_vlc-3.0.20123-py3-none-any.whl", hash = "sha256:903b3dc3602804958837c69907f3d3485921ef8424c254c7314db3d6037f8d62"},
+]
+
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10.0,<3.12"
-content-hash = "9b2382da853d1d5c7aca35bae9dd46e6701d3afd1e6f6e4c08785e391d45fdb6"
+content-hash = "23cfebd30e5b5e3c7514d09a41bbb3c91c7df74ad02462be4c529bc0ff6470d6"
