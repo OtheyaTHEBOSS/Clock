@@ -8,7 +8,7 @@ video_label = tk.Label(root)
 video_label.pack(fill=tk.BOTH, expand=True)
 
 # Create a TkVideo player
-player = tkvideo.tkvideo("1.mp4", video_label, loop=True)
+player = tkvideo.Tkvideo("video.mp4", video_label, loop=True)
 
 # Start playing the video
 player.play()
