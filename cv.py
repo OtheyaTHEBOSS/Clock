@@ -6,7 +6,7 @@ while(vid.isOpened()):
     ret, frame = vid.read()
     frame = cv2.resize(frame, (1280, 720))
     cv2.imshow("video", frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(60) & 0xFF == ord('q'):
         break
 
 vid.release()
