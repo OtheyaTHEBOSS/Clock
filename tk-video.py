@@ -4,7 +4,7 @@ import vlc
 root = tk.Tk()
 
 # VLC Setup
-instance = vlc.Instance("--no-video")  # Suppress VLC window
+instance = vlc.Instance()  # Suppress VLC window
 player = instance.media_player_new()
 media = instance.media_new('1.mp4')  # Replace 'video.mp4' with your file path
 player.set_media(media)
