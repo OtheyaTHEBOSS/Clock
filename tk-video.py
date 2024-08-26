@@ -4,21 +4,17 @@ import vlc
 root = tk.Tk()
 
 # VLC Setup
-instance = vlc.Instance()  # Suppress VLC window
+instance = vlc.Instance("--no-video")
 player = instance.media_player_new()
 media = instance.media_new('1.mp4')  # Replace 'video.mp4' with your file path
 player.set_media(media)
 
-# Frame and Label
+# Frame and Video Widget
 frame = tk.Frame(root)
-frame.pack(fill=tk.BOTH, expand=True)  # Fill available space
+frame.pack(fill=tk.BOTH, expand=True)
 
-label = tk.Label(frame, text="This is text over the video")
-label.pack()
-
-# Video Widget
 video_widget = tk.Label(frame)
-video_widget.pack(fill=tk.BOTH, expand=True)  # Fill remaining space
+video_widget.pack(fill=tk.BOTH, expand=True)
 
 # Connect VLC to Tkinter Widget
 player.set_hwnd(video_widget.winfo_id())
