@@ -11,7 +11,7 @@ player = instance.media_player_new()
 video_widget = tk.Label(frame)
 video_widget.pack(fill=tk.BOTH, expand=True)
 
-media = instance.media_new('video.mp4')
+media = instance.media_new('1.mp4')
 player.set_media(media)
 player.set_hwnd(video_widget.winfo_id())
 
