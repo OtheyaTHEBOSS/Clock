@@ -3,7 +3,7 @@ import pyaudio
 import wave
 
 cap = cv2.VideoCapture('1.mp4')
-wf = wave.open('1.mp4', 'rb')
+wf = wave.open('1.wav', 'rb')
 
 p = pyaudio.PyAudio()
 stream = p.open(format=p.get_format_from_width(wf.getsampwidth()),
